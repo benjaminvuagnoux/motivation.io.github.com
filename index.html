@@ -1,0 +1,404 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Motivation.io - Generateur de lettre de motivation</title>
+    <link rel="stylesheet" href="style.css">
+    <script src="https://code.jquery.com/jquery-3.4.1.min.js"
+        integrity="sha256-CSXorXvZcTkaix6Yvo6HppcZGetbYMGWSFlBw8HfCJo=" crossorigin="anonymous"></script>
+    <link href="https://fonts.googleapis.com/css?family=Rubik:400,500&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.12.0/css/all.css"
+        integrity="sha384-REHJTs1r2ErKBuJB0fCK99gCYsVjwxHrSU0N7I1zl9vZbggVJXRMsv/sLlOAGb4M" crossorigin="anonymous">
+
+
+</head>
+
+<body>
+    <section id="hero">
+        <header>
+            <div id="bg-logo">
+                <h1>Motivation.io</h1>
+            </div>
+            <nav>
+                <ul>
+                    <li><a href="#" id="nav-btn">Créer ma lettre de motivation</a></li>
+                    <li><a href="#" class="nav-link">Inscription</a></li>
+                    <li><a href="#" class="nav-link">Connexion</a></li>
+                    <li><a href="#"><i class="fab fa-twitter m15"></i></a></li>
+                    <li><a href="#"><i class="fab fa-facebook m15"></i></a></li>
+                </ul>
+            </nav>
+        </header>
+
+
+        <h2>Décrochez l'entretien dont vous rêvez.</h2>
+        <h4>Que vous cherchiez à répondre à une annonce
+            ou à envoyer une candidature spontanée,
+            Motivation.io crée pour vous une lettre de motivation
+            adaptée au poste que vous visez.
+        </h4>
+
+        <a href="#" class="hero-btn">Créér ma lettre de motivation</a>
+    </section>
+
+    <div id="main-containe">
+        <form action="#">
+            <div id="type-de-lettre">
+                <h3 class="form-title">De quel type de lettre avez vous besoin ?</h3>
+                <div class="container">
+                    <a href="#" class="btn btn-blue" id="btn-stage">Stage : réponse à une annonce</a>
+                    <a href="#" class="btn btn-pink" id="btn-emploi-annonce">Emploi : réponse à une annonce</a>
+                    <a href="#" class="btn btn-pink" id="btn-emploi-sponta">Emploi : candidature spontanée</a>
+                </div>
+            </div>
+
+            <div id="vos-informations-personnelles" class="caché">
+                <!--1111111-->
+                <h3 class="form-title">Vos informations Personnelles</h3>
+                <div class="row">
+                    <!--Nom-->
+                    <div class="input-container">
+                        <label for="nom" id="label-nom" class="form-label">Nom :</label>
+                        <input type="text" id="nom" name="nom" placeholder="Ex : VUAGNOUX"
+                            class="info-perso form-normal" required>
+                    </div>
+
+                    <!--Prénom-->
+                    <div class="input-container">
+                        <label for="prenom" id="label-prénom" class="form-label">Prénom :</label>
+                        <input type="text" id="prenom" name="prenom" placeholder="Ex : Benjamin"
+                            class="info-perso form-normal" required>
+                    </div>
+                </div>
+
+                <div class="row">
+                    <!--Telephone-->
+                    <div class="input-container">
+                        <label for="telephone" id="label-telephone" class="form-label">Numéro de téléphone :</label>
+                        <input type="tel" id="telephone" name="telephone" placeholder="Ex : 07 96 00 75 75"
+                            class="info-perso form-normal" required>
+                    </div>
+                    <!--Email-->
+                    <div class="input-container">
+                        <label for="email" id="label-email" class="form-label">Email :</label>
+                        <input type="email" id="email" name="email" placeholder="Ex : monemail@mail.com"
+                            class="info-perso form-normal" required>
+                    </div>
+                </div>
+
+                <div class="row">
+                    <!--Adresse-->
+                    <div class="input-container">
+                        <label for="adresse" id="label-adresse" class="form-label">Adresse complète :</label>
+                        <input type="text" id="adresse" name="adresse"
+                            placeholder="Ex : 10 Avenue Alphonse Piquet, appt. 218, 75000 Paris "
+                            class="info-perso form-mega" required>
+                    </div>
+                </div>
+                <!--Bouton Suivant 2 : Vos informations personnelles => Informations sur l'entreprise-->
+                <div class="row">
+                    <a href="#" class="btn btn-suivant" id="btn-suiv-2">Étape suivante</a>
+                </div>
+            </div>
+
+            <div class="caché" id="informations-sur-lentreprise">
+                <!--111-->
+                <h3 class="form-title">Informations sur l'entreprise</h3>
+                <div class="row">
+                    <!--Nom de l'entreprise-->
+                    <div class="input-container">
+                        <label for="nom-entreprise" id="label-nom-entreprise" class="form-label">Nom de l'entreprise
+                            :</label>
+                        <input type="text" id="nom-entreprise" name="nom-entreprise" placeholder="Ex : Microsoft"
+                            class="info-entreprise form-normal" required>
+                    </div>
+                    <!--Nom du chargé de recrutement-->
+                    <div class="input-container">
+                        <label for="nom-recrut" id="label-nom-recrut" class="form-label">Nom du chargé de recrutement
+                            :</label>
+                        <input type="text" id="nom-recrut" name="prenom" placeholder="Ex : Gates"
+                            class="info-entreprise form-normal" required>
+                    </div>
+                </div>
+
+                <!--Radio madame ou monsieur-->
+                <div id="check-monsieur">
+                    <div class="row row-radio">
+                        <div class="radio-box">
+                            <input type="radio" id="madame" name="monsieur-madame" value="Madame" checked>
+                            <label for="madame" class="radio-label">Madame</label>
+                        </div>
+                        <div>
+                            <input type="radio" id="monsieur" name="monsieur-madame" value="Monsieur">
+                            <label for="monsieur" class="radio-label">Monsieur</label>
+                        </div>
+                    </div>
+                </div>
+
+                <!--Bouton Suivant 3 : Informations sur l'entreprise => Informations sur le poste recherché-->
+                <div class="row">
+                    <a href="#" class=" btn btn-suivant" id="btn-suiv-3">Étape suivante</a>
+                </div>
+            </div>
+
+            <div id="information-poste" class="caché">
+                <h3 class="form-title">Informations sur le poste recherché</h3>
+                <!--Cursus en cours :-->
+                <div class="row">
+                    <div class="input-container">
+                        <label for="cursus" id="label-cursus" class="form-label">Cursus en cours :</label>
+                        <input type="text" id="cursus" name="cursus"
+                            placeholder="Ex : 4e année de droit à l'université Jules Vernes"
+                            class="info-perso form-mega" required>
+                    </div>
+                </div>
+
+
+                <!--Titre du poste :-->
+                <div class="row">
+                    <div class="input-container">
+                        <label for="titre-poste" id="label-titre-poste" class="form-label">Titre du poste :</label>
+                        <input type="text" id="titre-poste" name="titre-poste" placeholder="Ex : Assistant comptable"
+                            class="info-entreprise form-normal" required>
+                    </div>
+
+                    <!--Type de poste :-->
+                    <div class="input-container">
+                        <label for="type-poste" id="label-type-poste" class="form-label">Type de poste :</label>
+                        <input type="text" id="type-poste" name="type-poste" placeholder="Ex : la comptabilité"
+                            class="info-entreprise form-normal" required>
+                    </div>
+                </div>
+
+                <!--Durée du stage :-->
+                <div class="row">
+                    <div class="input-container">
+                        <label for="duree" id="label-duree" class="form-label">Durée du stage :</label>
+                        <input type="text" id="duree" name="duree" placeholder="Ex : 4 mois"
+                            class="info-entreprise form-normal" required>
+                    </div>
+
+                    <!--Disponibilités :-->
+                    <div class="input-container">
+                        <label for="dispo" id="label-dispo" class="form-label">Disponibilités :</label>
+                        <input type="text" id="dispo" name="dispo" placeholder="Ex : Avril/Mai"
+                            class="info-entreprise form-normal" required>
+                    </div>
+                </div>
+
+                <!--Matière la plus importante :-->
+                <div class="row">
+                    <div class="input-container">
+                        <label for="matiere" id="label-matiere" class="form-label">Matière la plus importante de votre
+                            formation:</label>
+                        <input type="text" id="matiere" name="matiere" placeholder="Ex : Comptabilité internationale"
+                            class="info-perso form-mega" required>
+                    </div>
+                </div>
+
+                <!--Bouton Suivant 4 : Informations sur le poste recherché => première experience dans le domaine-->
+                <div class="row">
+                    <a href="#" class="btn btn-suivant" id="btn-suiv-4">Étape suivante</a>
+                </div>
+            </div>
+
+            <div class="premiere-exp caché">
+
+                <h3 class="form-title">Avez-vous une première experience dans le domaine ?</h3>
+                <div class="row">
+                    <a href="#" class="btn btn-blue" id="btn-exp-oui">OUI</a>
+                    <a href="#" class="btn btn-pink" id="btn-exp-non">NON</a>
+                </div>
+            </div>
+
+            <div class="premiere-exp-yes">
+                <div id="radio-exp" class="caché">
+                    <div class="row row-radio">
+                        <div>
+                            <input type="radio" id="exp-stage" name="exp-check" value="Stage" checked>
+                            <label for="exp-stage">Stage</label>
+                        </div>
+                        <div>
+                            <input type="radio" id="exp-emploi" name="exp-check" value="Emploi">
+                            <label for="exp-emploi">Emploi</label>
+                        </div>
+                        <div>
+                            <input type="radio" id="exp-benevola" name="exp-check" value="Benevola">
+                            <label for="exp-benevola">Benevola</label>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="exp-input yolo caché" id="info-exp">
+                <!--Nom de l'entreprise d'accueil :-->
+                <div class="row">
+                    <div class="input-container">
+                        <label for="exp-entreprise-ip" id="label-exp-entreprise-ip" class="form-label">Nom de
+                            l'entreprise
+                            d'accueil
+                            :</label>
+                        <input type="text" id="exp-entreprise-ip" name="exp-entreprise-ip" placeholder="Ex : Google Inc"
+                            class="info-perso form-mega" required>
+                    </div>
+                </div>
+
+                <!--Mission principale :-->
+                <div class="row">
+                    <div class="input-container">
+                        <label for="exp-mission" id="label-exp-mission" class="form-label">Mission principale :</label>
+                        <input type="text" id="exp-mission" name="exp-mission"
+                            placeholder="Ex : Gestion de la trésorerie" class="info-perso form-mega" required>
+                    </div>
+                </div>
+
+                <!--Bouton Suivant 5 : première experience dans le domaine => Completez ces affirmations-->
+                <div class="row">
+                    <a href="#" class="btn btn-suivant btn-suiv-5">Étape suivante</a>
+                </div>
+            </div>
+
+            <div class="matiere yolo caché" id="matiere-groupe">
+                <!--Matière importante dans laquelle vous avez effectué un travail de groupe :-->
+                <div class="row">
+                    <div class="input-container">
+                        <label for="exp-matiere" id="label-exp-matiere" class="form-label">Matière importante dans
+                            laquelle
+                            vous avez effectué un travail de groupe :</label>
+                        <input type="text" id="exp-matiere" name="exp-matiere"
+                            placeholder="Ex : Gestion de la trésorerie" class="info-perso form-mega" required>
+                    </div>
+                </div>
+                <!--Bouton Suivant 5 : première experience dans le domaine => Completez ces affirmations-->
+                <div class="row">
+                    <a href="#" class="btn btn-suivant btn-suiv-5">Étape suivante</a>
+                </div>
+            </div>
+
+
+
+            <div class="affirmations caché">
+                <h3 class="form-title">Completez ces affirmations</h3>
+                <!--Je suis attiré depuis tout jeune par :-->
+                <div>
+                    <div class="row">
+                        <div class="input-container">
+                            <label for="jeune" id="label-jeune" class="form-label">Je suis attiré depuis tout jeune par
+                                :</label>
+                            <input type="text" id="jeune" name="jeune" placeholder="Ex : Les chiffres"
+                                class="info-perso form-mega" required>
+                        </div>
+                    </div>
+
+                    <!--J’ai toujours été : -->
+                    <div class="row">
+                        <div class="input-container">
+                            <label for="toujours" id="label-toujours" class="form-label">J’ai toujours été : </label>
+                            <input type="text" id="toujours" name="toujours" placeholder="Ex : Curieux et autodidacte"
+                                class="info-perso form-mega" required>
+                        </div>
+                    </div>
+
+                    <!--Je souhaite orienter ma carrière vers : -->
+                    <div class="row">
+                        <div class="input-container">
+                            <label for="orientation" id="label-orientation" class="form-label">Je souhaite orienter ma
+                                carrière
+                                vers :
+                            </label>
+                            <input type="text" id="orientation" name="orientation" placeholder="Ex : la comptabilité"
+                                class="info-perso form-mega" required>
+                        </div>
+                    </div>
+
+                    <!--Je souhaite orienter ma carrière vers : -->
+                    <div class="row">
+                        <div class="input-container">
+                            <label for="reconnue" id="label-reconnue" class="form-label">Votre entreprise est reconnue
+                                pour
+                                :
+                            </label>
+                            <input type="text" id="reconnue" name="reconnue"
+                                placeholder="Ex : la qualité de ses produits" class="info-perso form-mega" required>
+                        </div>
+                    </div>
+                </div>
+
+                <!--Bouton final : il lance le rendu de la lettre de motivation-->
+                <div class="row">
+                    <a class="btn btn-blue" id="final-submit" href="#lettre-finale">Générer ma lettre de motivation</a>
+                </div>
+        </form>
+
+        <div id="lettre-finale">
+            <div class="entete">
+                <p id="personal-info-name"><span class="pin-prenom">Prénom</span> <span class="pin-nom">NOM</span></p>
+                <p id="personal-info-adresse">Votre adresse complète</p>
+                <p id="personal-info-tel">Télephone : <span id="pin-tel">00000000</span></p>
+                <p id="personal-info-email">Email@mail.com</p>
+            </div>
+
+            <section class="entreprise">
+                <p id="entrep-nom">NOM DE L'ENTREPRISE</p>
+                <p><span class="mons-mad">Madame</span> <span class="entrep-recrut"></p>
+            </section>
+
+            <section class="date"><span id="city"></span> <span id="date"></span></section>
+
+            <section class="objet">
+                <p><strong>Objet : lettre de motivation pour le stage de <span class="out-metier">XXXX</span></strong>
+                </p>
+            </section>
+
+            <section class="salutation">
+                <p id="salut"><span class="mons-mad">Madame</span> <span class="entrep-recrut"></span>,</p>
+            </section>
+
+            <section class="parags">
+                <p id="p1">Je suis actuellement étudiant en <span id="mon-cursus">XXXX</span> et je suis à la recherche
+                    d'un
+                    stage pratique, intégré dans ma formation, pour une durée de <span id="ma-duree">XXXX</span> pouvant
+                    débuter en <span id="mes-dispo">XXXXX</span>.</p>
+                <p id="p2">En effet, afin d'être préparé à ma future carrière, j'ai choisi lors de ma formation l'option
+                    <span id="mon-option">XXXX</span>. Serieux et pragmatique,
+                    <span id="exp-stage-parag" class="caché">les expériences acquises au contact de la réalité et durant
+                        les différentes missions de groupe à l’école m’ont permis d'apprécier <span
+                            id="matiereimp">XXXX</span>, d’aborder le côté opérationnel de ce métier et de réaliser des
+                        missions en parfaite autonomie.
+                    </span>
+                    <span id="exp-autre-parag" class="caché">les expériences acquises au contact de la réalité et durant
+                        les
+                        différentes
+                        missions de <span id="mes-missions">XXXX</span> pour <span id="exp-entreprise">XXXX</span> m’ont
+                        permis d’aborder le côté opérationnel de ce métier et de réaliser des missions
+                        en parfaite autonomie.
+                    </span>
+                </p>
+                <p id="p3">
+                    Je suis attiré depuis tout jeune par <span id="out-jeune">XXXX</span> et j’ai toujours été <span
+                        id="out-toujours">XXXX</span>. Je souhaite
+                    maintenant orienter ma carrière vers <span id="out-orienter">XXXX</span> et intégrer <span
+                        id="out-votre-entreprise">XXXX</span>, leader dans
+                    son domaine, reconnu pour <span id="out-reconnue">XXXX</span> dans le cadre d'un stage serait une
+                    formidable opportunité pour moi
+                    pour découvrir en détail le métier de <span class="out-metier">XXXX</span> et ses missions ! </p>
+                <p id="revoir">Je me tiens à votre entière disposition pour tous renseignements complémentaires.
+                    Dans l’attente de vous rencontrer, je vous prie d'agréer l'expression de mes respectueuses
+                    salutations.
+                </p>
+                <p id="signature"><span class="pin-prenom">XXX</span>
+                    <spane class="pin-nom"></spane>
+                </p>
+            </section>
+        </div>
+    </div>
+
+    <!--Javascript Link-->
+    <script src="script/main.js"></script>
+    <!--jQuery CDN-->
+
+</body>
+
+</html>
